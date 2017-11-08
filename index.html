@@ -159,8 +159,8 @@
         </style>
         <script>
             function Purchase(){
-                var firstname = document.getElementById("firstname");
-                var lastname = document.getElementById("lastname");
+                var firstname = document.getElementById("Firstname");
+                var lastname = document.getElementById("Lastname");
                 var address = document.getElementById("Address");
                 var quantity1 = document.getElementById("quantity1");
                 var quantity2 = document.getElementById("quantity2");
@@ -182,12 +182,12 @@
 
                 var total = shipping + subtotal + tax 
                 var build = ""
-                    build += firstname + lastname + "Your subtotal is $" + subtotal + "<br>";
+                    build += firstname.value + " " + lastname.value + " Your subtotal is $" + subtotal + "<br>";
                     build += "Tax is $" + tax + "<br>";
                     build += "Shipping is $" + shipping + "<br>";
                     build += "________________" + "<br>";
                     build += "Total is $" + total + "<br>";
-                    build += "Thanks for shopping on AZ!! Your order will be shipped at " + address + "<br>";
+                    build += "Thanks for shopping on AZ!! Your order will be shipped at " + address.value  + " in four days" + "<br>";
                     build += "HOPE TO SEE YOU AGAIN!!";
                 //alert(build)
                 var build2 = ""
@@ -311,9 +311,9 @@
             CUSTOMER INFORMATION:<br>
             <br>
             First name:<br>
-            <input type="text" id="firstname"><br>
+            <input type="text" id="Firstname"><br>
             Last name:<br>
-            <input type="text" id="lastname"><br>
+            <input type="text" id="Lastname"><br>
             Complete Adress:<br>
             <input type="text" id="Address">
         </span>
