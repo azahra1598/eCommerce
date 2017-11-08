@@ -1,0 +1,335 @@
+<!doctype>
+<html>
+    <head>
+        <title>AZ Internationals</title>
+        <style>
+            
+            body{
+                text-align: center
+            }
+            h1{
+                color : rgba(223, 39, 64, 0.945)
+            }
+            h1{
+                font-size: 50 
+     
+            }
+            h1{
+                font-family: Impact, Charcoal, sans-serif; 
+                }
+           
+            img {
+                width: 300
+    
+            }
+            h2 {
+                color : #830707
+            }
+            h3 {
+                color: rgb(82, 117, 161) 
+            }
+            h4 {
+                color: #6c6baddc 
+            }
+            h2 {
+                font-family: "Monospace", Courier, Lucida;
+                
+    
+            }
+            h3 {
+                font-family: "Comic Sans MS", cursive, sans-serif;
+                font-style: italic;
+            }
+            .image {
+                width: 150px
+            }
+            .Zoom {
+                width: 0px;
+                position:absolute; 
+
+            }
+            .image:hover + .Zoom {
+                width: 500px
+            }
+            h7 {
+                font-size: 14 
+            }
+
+            div{
+                text-align: left;
+                float: left;
+                width: 400px;
+                
+                
+            }
+            body{
+                text-align: center
+            }
+           
+            div{
+                text-align: center;
+               
+        
+            }
+            
+
+            h5{
+                
+                font-size: 20;
+                color: red
+            }
+            button{
+                border-radius: 40%;
+                background-color: rgb(13, 20, 87);
+                border: double;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                box-shadow: 0 8px 16px 0 rgb(5, 99, 136), 0 6px 20px 0 rgba(0, 0, 0, 0);
+                
+            }
+            img {
+                box-shadow: 0 8px 16px 0 rgb(92, 58, 58), 0 6px 20px 0 rgba(20, 15, 36, 0.849);
+                border-style: inset;
+                border-color: rgb(0, 0, 0) ;
+                border-width: 5px;
+            }
+            p{
+                border-style: double;
+                border-color: rgb(255, 215, 36);
+                border-width: 6px;
+            }
+            h1{
+                border-style: dotted dashed solid double;
+                border-color: rgb(255, 0, 64);
+                border-width: 6px;
+                box-shadow: 0 8px 16px 0 rgb(238, 64, 64), 0 6px 20px 0 rgba(224, 42, 42, 0.849);
+            }
+            table{
+                text-align: center;
+                float: center;
+                width: 400px;
+                
+                
+            }
+            th{
+                font-family: "Comic Sans MS", cursive, sans-serif;
+                font-style: italic;
+                font-size: 25px; 
+                color: rgb(6, 4, 109);
+                border-style: solid double;
+                border-color: rgb(0, 0, 0);
+                border-width: 6px;
+            }
+            td{
+                font-family: "Monospace", Courier, Lucida;
+                font-style: italic;
+                font-size: 18px; 
+                color: rgb(109, 34, 4);
+                border-style: solid double;
+                border-color: rgb(0, 0, 0);
+                border-width: 6px; 
+            }
+            table{
+                border-style: solid double;
+                border-color: rgb(0, 0, 0);
+                border-width: 6px;
+
+            }
+            span{
+                
+                color: rgb(1, 6, 77);
+                
+
+            }
+            form{
+                color: rgb(1, 6, 77);
+            }
+           
+            #grad {
+                
+                background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /*Standard*/
+            }
+            
+            
+
+        </style>
+        <script>
+            function Purchase(){
+                var firstname = document.getElementById("firstname");
+                var lastname = document.getElementById("lastname");
+                var address = document.getElementById("Address");
+                var quantity1 = document.getElementById("quantity1");
+                var quantity2 = document.getElementById("quantity2");
+                var quantity3 = document.getElementById("quantity3");
+                var output = document.getElementById("output");
+                var subtotal =  (parseInt(quantity1.value*30) + parseInt(quantity2.value*300) + parseInt(quantity3.value*50));
+                var companysubtotal = parseInt(quantity1.value*20) +parseInt(quantity2.value*200) + parseInt(quantity3.value*10);
+                var profit = subtotal - companysubtotal
+                var totalitems = parseInt(quantity1.value)+ parseInt(quantity2.value) + parseInt(quantity3.value);
+                var tax = subtotal *(8.875)/100;
+                var shipping = " "
+                if (subtotal <= 100) {
+                    shipping = 25
+                }else if (subtotal > 100 && subtotal <= 200){
+                    shipping = 10
+                }else if (subtotal >200){
+                    shipping = 0
+                }
+
+                var total = shipping + subtotal + tax 
+                var build = ""
+                    build += firstname + lastname + "Your subtotal is $" + subtotal + "<br>";
+                    build += "Tax is $" + tax + "<br>";
+                    build += "Shipping is $" + shipping + "<br>";
+                    build += "________________" + "<br>";
+                    build += "Total is $" + total + "<br>";
+                    build += "Thanks for shopping on AZ!! Your order will be shipped at " + address + "<br>";
+                    build += "HOPE TO SEE YOU AGAIN!!";
+                //alert(build)
+                var build2 = ""
+                    build2 += "Company Profit is $" + profit + "\n";
+                    build2 += "________________"
+                console.log(build2);
+                output.innerHTML = build 
+
+
+        
+            }
+            
+
+
+        </script>
+    </head>
+    <body>
+        <body style="background-color : #F1948A;">
+        
+            <h1 class= "ribbon"> AZ Internationals </h1>
+            
+            <h7>
+                **Put the mouse on the pictures to have a bigger view**
+            </h7>
+            <br>
+            <div>
+            <h2>  |Bts Hoodie| <h2><br>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<img class = "image" src = "bts.png"> &nbsp;
+            <img class = "Zoom" src = "bts.png"> &nbsp;
+            <br>
+        
+            <p>
+                
+                <h3>
+                    DESCRIPTION: BTS hoodie which has all the seven members's names. Black and 
+                    white, 100% cotton. 
+                </h3>
+            </p>
+            <h4>
+            <span> Price: $30 </span> <br>
+            </h4>
+            <input id = "quantity1" type = "text"><br>
+            <br>
+            
+        </div>
+        <div>
+            <h2>|Mother Daughter Outfit| </h2>
+            <img class = "image" src = "md.jpg"/> &nbsp;
+            <img class = "Zoom" src = "md.jpg"/> &nbsp;
+            
+            <br>  
+            <p>
+                <h3>
+                    
+                    DESCRIPTION: Gorgeous mother daughter dress for a night formal party. 
+                    50% silk, 50% cotton. Soft material for the daughter dress so it doesn't
+                    hurt. Good Quality. 100% guaraunte fit. 
+                </h3>
+            </p>
+            
+            <h4>
+            <span> Price: $300 </span> <br>
+    
+            </h4>
+            <input id = "quantity2" type = "text"><br><br>
+            
+            
+            
+      
+        </div>
+        <div>   
+            <h2>|Painting by AZ|</h2>
+                        
+            <img class = "Image" src = "painting.png"> &nbsp;
+            <img class = "Zoom" src = "painting.png"> &nbsp;
+            <br>
+             <p>
+                <h3>
+                    |'Midnight in the Park'|
+                    DESCRIPTION: Beutiful night scenary of the beutiful sky and stars. Enjoy 
+                    view of 12 inches by 12 inches
+                </h3>
+            </p>
+            <h4>
+            <span> Price: $50 </span> <br>
+            </h4>
+            <input id = "quantity3" type = "text"><br>
+            <br>
+           
+            
+
+        </div>
+        
+        <table style="width:100%">
+                
+                <tr>
+                   <br>
+                    <br>
+                    <br>
+                    <br>
+                    <th>Reviews</th>
+                    <th></th>
+                    </b>
+                </tr>
+                
+                <tr>
+                  <td>Jack: |BTS Hoodie| 4/4The jacket came out pretty good I liked it. </td> 
+                  
+                  <td>Sharla: |Mother Daughter Outfit| 5/4 The dress was pretty good, it came out how it was, just that I loved it.</td> 
+                  
+                </tr>
+                <tr>
+                  <td>Eve: |BTS Hoodie| 4/4 My dream came true,I felt the jacket.</td>
+                  
+                  <td>Jackson: |Painting by AZ| 4/4 That Painting made my hallway look good. </td> 
+                  
+                </tr>
+        </table>
+        <br>
+        <span>
+            CUSTOMER INFORMATION:<br>
+            <br>
+            First name:<br>
+            <input type="text" id="firstname"><br>
+            Last name:<br>
+            <input type="text" id="lastname"><br>
+            Complete Adress:<br>
+            <input type="text" id="Address">
+        </span>
+        <br>
+        <form>
+            <br>
+            <input type="radio" name="Type" value="Credit Card" checked> Credit Card<br>
+            <input type="radio" name="Type" value="Debit Card"> Debit Card<br>
+            <input type="radio" name="Type" value="Paypal"> Paypal
+        </form>
+        <br>
+        <button onclick = "Purchase();"> Purchase </button>
+        <br>
+        <br>
+        <h5><span id= "output"></span> </h5>   
+        <br>
+        <embed src="forproject.mp3" loop="true" autobuffer>
+    </body>
+<html>
