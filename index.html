@@ -153,13 +153,18 @@
                 
                 background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /*Standard*/
             }
+            * {box-sizing:border-box}
+
+
+
+            
             
             
 
         </style>
         <script>
             function Purchase(){
-                var firstname = document.getElementById("Firstname");
+                var firstname = document.getElementById("FirstLastname");
                 var lastname = document.getElementById("Lastname");
                 var address = document.getElementById("Address");
                 var quantity1 = document.getElementById("quantity1");
@@ -172,35 +177,59 @@
                 var totalitems = parseInt(quantity1.value)+ parseInt(quantity2.value) + parseInt(quantity3.value);
                 var tax = subtotal *(8.875)/100;
                 var shipping = " "
+               
                 if (subtotal <= 100) {
                     shipping = 25
+                    
+                    
                 }else if (subtotal > 100 && subtotal <= 200){
                     shipping = 10
+                    
                 }else if (subtotal >200){
                     shipping = 0
+                
                 }
 
+
+
                 var total = shipping + subtotal + tax 
+
+                
+
                 var build = ""
-                    build += firstname.value + " " + lastname.value + " Your subtotal is $" + subtotal + "<br>";
-                    build += "Tax is $" + tax + "<br>";
-                    build += "Shipping is $" + shipping + "<br>";
-                    build += "________________" + "<br>";
-                    build += "Total is $" + total + "<br>";
-                    build += "Thanks for shopping on AZ!! Your order will be shipped at " + address.value  + " in four days" + "<br>";
-                    build += "HOPE TO SEE YOU AGAIN!!";
-                //alert(build)
+                    build += firstname.value + " The subtotal for your order is $" + subtotal + "<br>";
+                    build += "You bought " + quantity1.value + " BTS Hoodie, " + quantity2.value + " Mother Daughter Outfit and " + quantity3.value + " Painting." + "<br>";
+                
+                    build += "After adding the Tax, the subtotal is $" + tax + "<br>";
+                    build+= "The Shipping is $" + shipping + "<br>";
+                    if (total >= 450){
+                    total = total-((total*20)/100)
+                    build += ("Congrats You are eligible for 20% discount!!!")+"<br>";
+                    }else if(total >= 700){
+                    total = total -((total*50)/100)
+                    build += ("Congrats You are eligible for 50% discount!!!")+"<br>";
+                    }
+                    build += "________😆😆😆________" + "<br>";
+                    build += "Total is $" + total.toFixed(2) + "<br>";
+                    build += "<br> "
+                    build += "Thanks for shopping on AZ!! Your order will be shipped at " + address.value  + " in a few days depending on the shipping location." + "<br>";
+                    build += "HOPE TO SEE YOU AGAIN!!" + "<br>";
+                    build += "<br> ";
+                    build += "Now you can contact us at az101@gmail.com for any questions or concerns you have. We provide 24/7 customer care😆😆. "
+
+                
                 var build2 = ""
                     build2 += "Company Profit is $" + profit + "\n";
                     build2 += "________________"
                 console.log(build2);
+
+                
                 output.innerHTML = build 
 
 
         
             }
             
-
 
         </script>
     </head>
@@ -210,10 +239,10 @@
             <h1 class= "ribbon"> AZ Internationals </h1>
             
             <h7>
-                **Put the mouse on the pictures to have a bigger view**
+                **Hover over the picture to have a bigger view**
             </h7>
             <br>
-            <div>
+        <div>
             <h2>  |Bts Hoodie| <h2><br>
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<img class = "image" src = "bts.png"> &nbsp;
             <img class = "Zoom" src = "bts.png"> &nbsp;
@@ -229,9 +258,21 @@
             <h4>
             <span> Price: $30 </span> <br>
             </h4>
-            <input id = "quantity1" type = "text"><br>
-            <br>
+            <input id = "quantity1" type = "text" placeholder = "Quantity" > &nbsp;
             
+            <br>
+            <br>
+            <select>
+                <option value="Select your size">Size</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="X-Large">X-Large</option>
+                <option value="Custom">Contact us for custom</option>
+                
+            </select>
+            <br>
+
         </div>
         <div>
             <h2>|Mother Daughter Outfit| </h2>
@@ -252,17 +293,26 @@
             <span> Price: $300 </span> <br>
     
             </h4>
-            <input id = "quantity2" type = "text"><br><br>
-            
-            
+            <input id = "quantity2" type = "text" placeholder = "Quantity"><br><br>
+            <select>
+                <option value="Select your size">Size</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="X-Large">X-Large</option>
+                <option value="Custom">Contact us for custom</option>
+                
+            </select>
+            <br>
+            <br>
             
       
         </div>
         <div>   
             <h2>|Painting by AZ|</h2>
                         
-            <img class = "Image" src = "painting.PNG"> &nbsp;
-            <img class = "Zoom" src = "painting.PNG"> &nbsp;
+            <img class = "Image" src = "painting.png"> &nbsp;
+            <img class = "Zoom" src = "painting.png"> &nbsp;
             <br>
              <p>
                 <h3>
@@ -274,12 +324,13 @@
             <h4>
             <span> Price: $50 </span> <br>
             </h4>
-            <input id = "quantity3" type = "text"><br>
+            <input id = "quantity3" type = "text" placeholder = "Quantity"><br>
             <br>
-           
+            
             
 
         </div>
+       
         
         <table style="width:100%">
                 
@@ -310,14 +361,21 @@
         <span>
             CUSTOMER INFORMATION:<br>
             <br>
-            First name:<br>
-            <input type="text" id="Firstname"><br>
-            Last name:<br>
-            <input type="text" id="Lastname"><br>
-            Complete Adress:<br>
-            <input type="text" id="Address">
+            Full Name:<br>
+            <input type="text" id="FirstLastname" placeholder="Last Name, First Name"><br>
+            <br>
+            Address: <br>
+            <input type="text" id="Address" placeholder="Street Address">&nbsp;
+            <input type="text" id="Address" placeholder="Zip Code"> <br>
+            <input type="text" id="Address" placeholder="State/ Country"><br>
+            <br>
+            Email Address:<br>
+            <input type="text" id="Email"><br>
+            
+            
         </span>
         <br>
+        
         <form>
             <br>
             <input type="radio" name="Type" value="Credit Card" checked> Credit Card<br>
